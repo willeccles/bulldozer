@@ -1,0 +1,19 @@
+{
+  "project": {
+    "name": "helloworld",
+    "description": "hello world program",
+    "version": "1.2.3"
+  },
+  "targets": [
+    {
+      "name": "helloworld",
+      "type": "bin",
+      "src": "src",
+      "lang": "c",
+      "compile_flags": [ "-O3" ],
+      "link_flags": [ "-s" ],
+      "definitions": [ "COOL_MACRO", "OUTPUT_STR=\"Hello, World!\"" ],
+      "include_paths": []
+    }
+  ]
+}
