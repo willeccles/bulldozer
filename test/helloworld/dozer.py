@@ -1,2 +1,2 @@
 def CoolFunction():
-    print("Hello Bulldozer")
+    return "Hello Bulldozer"
