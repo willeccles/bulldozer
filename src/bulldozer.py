@@ -6,7 +6,7 @@ import importlib
 import argparse
 
 from bulldozer.configure import Configure
-
+#from bulldozer.build import Build
 
 parser = argparse.ArgumentParser(description='Bulldozer')
 subparsers = parser.add_subparsers(title="operations",
@@ -23,7 +23,14 @@ p_configure.add_argument('path', metavar='PATH', type=str, nargs='?',
         help='path to the project root directory', default=os.getcwd())
 p_configure.set_defaults(func=Configure)
 
+p_build = subparsers.add_parser('build', parents=[base_args],
+        help='build a project')
+p_build.add_argument('path', metavar='PATH', type=str, nargs='?',
+        help='path to the project build directory', default='./build')
+#p_build.set_defaults(func=Build)
+
 args = parser.parse_args()
+args.path = os.path.abspath(args.path)
 args.func(args)
 
 
